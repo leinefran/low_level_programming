@@ -2,10 +2,9 @@
 
 /**
  * main - entry point
- * program - prints holberton, followed by a new line
- * return: always 0
+ * Description - prints holberton, followed by a new line
+ * Return: Always 0
  */
-
 int main(void)
 {
 	_putchar('H');
@@ -19,5 +18,5 @@ int main(void)
 	_putchar('n');
 	_putchar('\n');
 
-	return(0);
+	return (0);
 }
