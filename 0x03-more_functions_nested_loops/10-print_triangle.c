@@ -17,7 +17,7 @@ void print_triangle(int size)
 		{
 			for (column = size ; column > 0 ; column--)
 			{
-				if(row < column)
+				if (row < column)
 				_putchar(' ');
 				else
 					_putchar('#');
