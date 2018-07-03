@@ -13,7 +13,6 @@ Scope of variables
 ---
 File|Task
 ---|---
-
 0-reset_to_98.c | takes a pointer to an int as parameter and updates it's value
 1-swap.c | swaps the values of two integers
 2-strlen.c | returns the length of a string
