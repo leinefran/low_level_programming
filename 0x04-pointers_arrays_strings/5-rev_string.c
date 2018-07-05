@@ -2,16 +2,13 @@
 
 /**
  * rev_string - reverses a string
- * _putchar - prints a character at a time
  * @s: points to the address of the 1st character of the string
  *
  * Return: Nothing.
  */
 void rev_string(char *s)
 {
-	int length, i, *p;
-
-	p = &(s[length]);
+	int length, i, temp, j;
 
 	i = 0;
 
@@ -20,9 +17,15 @@ void rev_string(char *s)
 		i++;
 	}
 
-	for (length = i - 1 ; length >= 0 ; length--)
+	length = i - 1;
+	j = length;
+
+	for (i = 0 ; i < length / 2 ; i++)
 	{
-		_putchar(s[length]);
+		temp = s[i];
+		s[i] = s[j];
+		s[j] = temp;
+
+		j--;
 	}
-	*s = p;
 }
