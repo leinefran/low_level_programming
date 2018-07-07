@@ -13,7 +13,7 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	int  dest_len = _strlen(dest);
+	int dest_len = _strlen(dest);
 	int src_len = _strlen(src);
 	int i, n;
 
@@ -21,7 +21,7 @@ char *_strcat(char *dest, char *src)
 
 	for (i = 0 ; i < n ; i++)
 		dest[dest_len + i] = src[i];
-	dest[dest_len + i] = '\0';
+	dest[dest_len + 1] = '\0';
 
 	return (dest);
 }
