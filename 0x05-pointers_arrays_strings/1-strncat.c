@@ -8,7 +8,7 @@
  *
  * @dest: a pointer to the string to be modified.
  * src will be copied at the end of dest.
- *
+ * @n: src_len.
  * @src: a pointer to a string that will be appended to the end of dest.
  *
  * Return: dest.
