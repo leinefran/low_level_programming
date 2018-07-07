@@ -14,7 +14,7 @@ char *string_toupper(char *s)
 	for (i = 0 ; s[i] != '\0' ; i++) /*runs through the string*/
 	{
 		if (s[i] >= 97 && s[i] <= 122) /*check for lowecase*/
-			s[i] = (s[i]- 32);  /*prints uppercase*/
+			s[i] = (s[i] - 32);  /*prints uppercase*/
 	}
 	return (s);
 }
