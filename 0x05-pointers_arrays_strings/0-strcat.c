@@ -15,7 +15,7 @@ char *_strcat(char *dest, char *src)
 {
 	int  dest_len = _strlen(dest);
 	int src_len = _strlen(src);
-	int i,n;
+	int i, n;
 
 	n = src_len + dest_len;
 
@@ -23,7 +23,7 @@ char *_strcat(char *dest, char *src)
 		dest[dest_len + i] = src[i];
 	dest[dest_len + i] = '\0';
 
-	return dest;
+	return (dest);
 }
 /**
  * _strlen - returns the length of a string
