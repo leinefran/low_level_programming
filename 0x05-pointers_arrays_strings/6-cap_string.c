@@ -17,7 +17,7 @@ char *cap_string(char *s)
 			s[i] = (s[i] - 32);
 		if (s[i] >= 'a' && s[i] <= 'z')
 		{
-			switch(s[i - 1])
+			switch (s[i - 1])
 			case ' ':
 			case '\t':
 			case '\n':
