@@ -19,17 +19,18 @@ char *_strcat(char *dest, char *src)
 
 	n = src_len + dest_len;
 
-	for (i = 0 ; i < n && != '\0' ; i++)
+	for (i = 0 ; i < n && src[i] != '\0' ; i++)
 		dest[dest_len + i] = src[i];
 	dest[dest_len + i] = '\0';
 
 	return (dest);
 }
 /**
- * _strlen - returns the length of a string
- * @s: pointer to the address of the string to be tested
+ * _strlen - returns the length of a string.
  *
- * Return: Always 0.
+ * @s: pointer to the address of the string to be tested.
+ *
+ * Return: Int.
  */
 int _strlen(char *s)
 {
