@@ -13,14 +13,21 @@ unsigned int _strspn(char *s, char *accept)
 	unsigned int i, j, count;
 	unsigned int n;
 
+	count = 0;
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0 ; accept[j] != '\0' ; j++)
 		{
 			if (s[i] == accept[j])
+			{
 				count++;
 				n = count;
+				break;
+			}
 		}
+		if (accept[j] == '\0' && count > 0)
+			break;
 	}
 
 	return (n);
