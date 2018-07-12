@@ -4,7 +4,7 @@
  * _sqrt_recursion - returns the natural square root of a number.
  *
  * @n: starting number.
- *
+ * @x: square root; variable.
  * Return: int.
  */
 int _sqrt_helper_recursion(int n, int x);
@@ -38,6 +38,6 @@ int _sqrt_helper_recursion(int n, int x)
 	}
 	else
 	{
-		return(_sqrt_helper_recursion(n, x + 1));
+		return (_sqrt_helper_recursion(n, x + 1));
 	}
 }
