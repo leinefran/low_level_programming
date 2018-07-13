@@ -12,9 +12,9 @@ Basic usage of ar, ranlib, nm
 ---
 File|Task
 ---|---
-holberton.h | Header File.
-libholberton.a | Static Library.
-create_static_lib.sh | A script that creates a static library.
+holberton.h | Header File
+libholberton.a | Static Library
+create_static_lib.sh | A script that creates a static library
 
 ## Author
 Leine Valente
