@@ -2,14 +2,14 @@
 #include <stdio.h>
 
 /**
- * ./mynameis - a program that prints its name, followed by a new line.
+ * main - a global function designated start of the program.
  *
  * @argc: contains the numbers of arguments passed to the program.
  * @argv: array of strings.
  *
- * Return: nothing.
+ * Return: int.
  */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	(void) argc;
 
