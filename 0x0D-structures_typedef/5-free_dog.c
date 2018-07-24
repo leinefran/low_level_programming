@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * free_dog: free struct dog_t.
+ * free_dog - free dog_t struct.
  *
  * @d: pointer to dog_t.
  *
