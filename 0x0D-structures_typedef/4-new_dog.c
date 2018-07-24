@@ -18,6 +18,7 @@ char *_strcpy(char *dest, char *src)
 
 		for (counter = 0; src[counter] != '\0'; counter++)
 			dest[counter] = src[counter];
+		dest[counter] = '\n';
 
 		return (dest);
 	}
