@@ -13,12 +13,12 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	va_list ap;
 	unsigned int i;
 
-	if ( separator != NULL)
+	if (separator != NULL)
 	{
 		va_start(ap, n); /*initializes ap for n number of arguments*/
 		for (i = 0 ; i < n ; i++) /*access all the arguments in ap*/
 		{
-			printf("%d", va_arg(ap,int));
+			printf("%d", va_arg(ap, int));
 			if (i != n - 1)
 			{
 				printf("%s", separator);
@@ -27,5 +27,5 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		va_end(ap); /*clean memory reserved for valist*/
 		}
 	}
-	printf("%c",'\n');
+	printf("%c", '\n');
 }
