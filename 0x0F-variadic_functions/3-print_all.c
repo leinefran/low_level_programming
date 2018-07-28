@@ -33,7 +33,7 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':
 			tmp = va_arg(ap, char *);
-			if (tmp ! NULL)
+			if (tmp != NULL)
 			{
 				printf("%s", tmp);
 				break;
