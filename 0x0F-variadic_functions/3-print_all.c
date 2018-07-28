@@ -33,7 +33,7 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':
 			tmp = va_arg(ap, char *);
-			if (tmp || *tmp)
+			if (tmp ! NULL)
 			{
 				printf("%s", tmp);
 				break;
@@ -41,6 +41,9 @@ void print_all(const char * const format, ...)
 			tmp = "(nil)";
 			printf("(nil)");
 			break;
+		default: /*perform a task when none of the cases is true*/
+			i++;
+			continue;
 		}
 		if (format[i + 1] != '\0')
 			printf(", ");
