@@ -52,7 +52,7 @@ void print_all(const char * const format, ...)
 			i++;
 		}
 		va_end(ap); /*clean memory reserved for valist*/
-		printf("\n");
 		break;
 	}
+		printf("\n");
 }
