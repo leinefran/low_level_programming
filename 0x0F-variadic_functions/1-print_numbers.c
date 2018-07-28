@@ -12,6 +12,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list ap;
 	unsigned int i;
+	const char *j = ""; /*allows me to change the value of sepa*/
+
+	if (separator == NULL)
+		separator = j;
 
 	if (separator != NULL)
 	{
