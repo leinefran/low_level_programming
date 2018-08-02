@@ -2,7 +2,8 @@
 #include <string.h>
 
 /**
- * add_node - a function that adds a new node at the beginning of a list_t list.
+ * add_node - a function that adds a new node at the beginning of a list_t
+ * list.
  * @head: points to the address of the first node.
  * @str: points to the string.
  * Return: the address of the new element, or NULL if it failed.
@@ -13,7 +14,7 @@ list_t *add_node(list_t **head, const char *str)
 	int i = 0;
 
 	new_node = malloc(sizeof(list_t));
-	if(new_node == NULL)
+	if (new_node == NULL)
 		return (NULL);
 
 	new_node->str = strdup(str);
@@ -27,7 +28,5 @@ list_t *add_node(list_t **head, const char *str)
 			;
 		new_node->len = i;
 	}
-
-
 	return (new_node);
 }
