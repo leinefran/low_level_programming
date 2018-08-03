@@ -7,23 +7,29 @@
  *
  * Return: 1 if the input interger is a prime number; 0 otherwise.
  */
+int is_prime_helper(int n, int div);
 int is_prime_number(int n)
 {
-	int i;
-
-	if (n <= 1)
+ 	if (n < 2)
 		return (0);
+	return (is_prime_helper(n, 2));
 
-	if (n == 2 || n == 3)
+}
+
+/**
+ * is_prime_helper - helps previous function.
+ *
+ * @n: the number to be verified.
+ * @div: the divisor.
+ * Return: 1 if the input interger is a prime number; 0 otherwise.
+ */
+int is_prime_helper(int n, int div)
+{
+	if (n == div)
 		return (1);
 
-	if (n % 2 == 0 || n % 3 == 0)
+	if (n % div == 0)
 		return (0);
-
-	for (i = 5 ; i * i <= n ; i = i + 6)
-	{
-		if (n % i == 0 || n % (i + 2) == 0)
-			return (0);
-	}
-	return (1);
+	else
+		return (is_prime_helper(n, div + 1));
 }
