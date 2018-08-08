@@ -5,7 +5,7 @@
  * of a listint_t linked list.
  *
  * @head: points to the pointer that points to the address of the first node.
- * @idx: the position where the new node should be added.
+ * @index: the position where the new node should be added.
  *
  * Return: 1 if it succeeded, -1 if it failed.
  */
