@@ -11,7 +11,7 @@ int find_pal(char *s, int first, int second);
 int is_palindrome(char *s)
 {
 	int first = 0;
-	int last = _strlen(s) - 1;
+	int second = _strlen(s) - 1;
 
 	if (_strlen(s) == 0 || _strlen(s) == 1)
 		return (1);
@@ -45,6 +45,6 @@ int find_pal(char *s, int first, int second)
 		return (0);
 	else if (first >= second)
 		return (1);
-	return (find_palindrome(s, first + 1, second - 1));
+	return (find_pal(s, first + 1, second - 1));
 }
 
