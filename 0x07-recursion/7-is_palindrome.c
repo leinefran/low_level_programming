@@ -6,30 +6,34 @@
  * @s: points to the value of first address.
  * Return: int.
  */
-int _strlen(char *s);
-int find_pal(char *s, int first, int second);
+int _strlen_recursion(char *s);
 int is_palindrome(char *s)
 {
 	int first = 0;
-	int second = _strlen(s) - 1;
+	int second = _strlen_recursion(s) - 1;
 
-	if (_strlen(s) == 0 || _strlen(s) == 1)
+	if (_strlen_recursion(s) == 0 || _strlen_recursion(s) == 1)
 		return (1);
 	return (find_pal(s, first, second));
 }
 
 /**
- * _strlen  - a function that returns the length of a string.
+ * _strlen_recursion - a function that returns the length of a string.
+ *
  * @s: points to the value of first address.
+ *
  * Return: int.
  */
-int _strlen(char *s)
+int _strlen_recursion(char *s)
 {
-	int length;
-
-	for (length = 0; s[length] != '\0' ; length++)
-		;
-	return (length);
+	if (*s)
+	{
+		return (1 + _strlen_recursion(++s));
+	}
+	else
+	{
+		return (0);
+	}
 }
 
 /**
