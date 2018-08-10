@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "holberton.h"
-#include <math.h>
 
 /**
  * binary_to_uint - a function that converts a binary number
