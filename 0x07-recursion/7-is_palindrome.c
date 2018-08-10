@@ -7,15 +7,15 @@
  * Return: int.
  */
 int _strlen(char *s);
-int find_palindrome(char *s, int first, int second);
+int find_pal(char *s, int first, int second);
 int is_palindrome(char *s)
 {
 	int first = 0;
-	int second = _strlen(s) - 1;
+	int last = _strlen(s) - 1;
 
 	if (_strlen(s) == 0 || _strlen(s) == 1)
 		return (1);
-	return (find_palindrome(s, first, second));
+	return (find_pal(s, first, second));
 }
 
 /**
@@ -27,18 +27,19 @@ int _strlen(char *s)
 {
 	int length;
 
-	for (length = 0; s[length] != '\0' ; length++ )
+	for (length = 0; s[length] != '\0' ; length++)
 		;
 	return (length);
 }
 
 /**
- * _find_palindrome - find if a string is a palindrome or not.
- * @length: the length of the string to be analyzed.
+ * find_pal - find if a string is a palindrome or not.
+ * @first: the first letter to be compared.
+ * @second: the second letter to be compared.
  * @s: the string.
  * Return: 1 if string is palindrome, and 0 if it's not.
  **/
-int find_palindrome(char *s, int first, int second)
+int find_pal(char *s, int first, int second)
 {
 	if (s[first] != s[second])
 		return (0);
