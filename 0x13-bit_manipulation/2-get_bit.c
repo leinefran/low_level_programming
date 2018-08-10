@@ -13,17 +13,13 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	int shift;
 
-	if (index == 0)
-		return (0);
-
-	else
+	while (index == 0 || index > 0)
 	{
-		while (index > 0)
-		{
-			shift = n >> index;
-			if (shift & 1)
-				return (1);
-		}
+		shift = n >> index;
+		if (shift & 1)
+			return (1);
+		else
+			return (0);
 	}
-	return (0);
+	return (-1);
 }
