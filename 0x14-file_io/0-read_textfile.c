@@ -12,6 +12,7 @@
  * read_textfile - a function that reads a text file
  * and prints it to the POSIX standard output.
  * @letters: the number of letters it should read and print
+ * @filename: pointer to the file.
  * Return:  the actual number of letters it could read and print
  * or, 0 if filename is NULL or if write fails.
  */
@@ -38,7 +39,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 /*read */
 	rd = read(fd, buf, letters);
 
-	close (fd);
+	close(fd);
 
 	if (rd == -1)
 	{
