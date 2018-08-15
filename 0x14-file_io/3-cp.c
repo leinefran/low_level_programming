@@ -16,7 +16,7 @@
  */
 int main(int argc, char **argv)
 {
-	int fd1, fd2, rd, cl;
+	int fd1, fd2, rd, wr, cl;
 	char buff[1024];
 
 /* check if the number of arguments is correct */
@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 
 	if (fd2 < 0)
 	{
-		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read from file",
+		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't write to",
 			argv[2]);
 		exit(99);
 	}
@@ -56,14 +56,20 @@ int main(int argc, char **argv)
 				"Error: Can't read from file", argv[1]);
 			exit(99);
 		}
-		write(fd2, buff, rd);
+		wr = write(fd2, buff, rd);
+		if (wr < 0)
+		{
+			dprintf(STDERR_FILENO, "%s %s\n",
+				"Error: Can't write to", argv[2]);
+			exit(99);
+		}
 	} while (rd);
 
 	cl = close(fd1);
 	if (cl < 0)
 	{
 		dprintf(STDERR_FILENO, "%s %d\n",
-			"Error: Can't read from file", cl);
+			"Error: Can't close fd ", cl);
 		exit(100);
 	}
 
@@ -71,7 +77,7 @@ int main(int argc, char **argv)
 	if (cl < 0)
 	{
 		dprintf(STDERR_FILENO, "%s %d\n",
-			"Error: Can't read from file", cl);
+			"Error: Can't close fd ", cl);
 		exit(100);
 	}
 	return (0);
