@@ -24,7 +24,7 @@ int main(int argc, char **argv)
 	{
 		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to")
 			;
-		exit(98);
+		exit(97);
 	}
 
 /* open source file in read mode */
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
 	{
 		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read from file",
 			argv[2]);
-		exit(98);
+		exit(99);
 	}
 
 /* use loop to iterate through the string and copy from src to dest */
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 		{
 			dprintf(STDERR_FILENO, "%s %s\n",
 				"Error: Can't read from file", argv[1]);
-			exit(98);
+			exit(99);
 		}
 		write(fd2, buff, rd);
 	} while (rd);
@@ -64,6 +64,7 @@ int main(int argc, char **argv)
 	{
 		dprintf(STDERR_FILENO, "%s %d\n",
 			"Error: Can't read from file", cl);
+		exit(100);
 	}
 
 	cl = close(fd2);
@@ -71,8 +72,7 @@ int main(int argc, char **argv)
 	{
 		dprintf(STDERR_FILENO, "%s %d\n",
 			"Error: Can't read from file", cl);
+		exit(100);
 	}
-
-
 	return (0);
 }
