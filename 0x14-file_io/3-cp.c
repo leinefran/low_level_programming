@@ -9,44 +9,70 @@
 #include "holberton.h"
 
 /**
- * copy_file - a program that copies the content of a file to another file.
- * @NAME_OF_THE_FILE: first argument passed.
+ * main - a program that copies the content of a file to another file.
+ * @argc: number of arguments.
+ * @argv: pointer to the arguments stored in a multidimentional array.
+ * Return: 0 on success.
  */
-void copy_file(
+int main(int argc, char **argv)
 {
-	int fd, cnt;
-	char *buffer;
+	int fd1, fd2, rd, cl;
+	char buff[1024];
 
-	if (file_from == NULL)
+/* check if the number of arguments is correct */
+	if (argc != 3)
 	{
-		dprintf(stderr, "Error: Can't read from file NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to")
+			;
 		exit(98);
 	}
 
 /* open source file in read mode */
-	file_from = open(filename, O_RDONLY);
+	fd1 = open(argv[1], O_RDONLY);
 
-	if (file_from == -1)
+	if (fd1 < 0)
 	{
-		dprintf(stderr, "Error: Can't read from file NAME_OF_THE_FILE\n");
-		close(file_from);
+		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read from file",
+			argv[1]);
 		exit(98);
 	}
 
-	for (cnt = 0; text_content[cnt] != '\0' ; cnt++)
-		;
+/* open dest file with permission to write. Set file to rw-rw-r-- */
+	fd2 = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
 
-/* open dest file with permission to write */
-
-	file_to = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
-
-	if (file_to == -1)
+	if (fd2 < 0)
 	{
-		dprintf(stderr, "Error: Can't read from file NAME_OF_THE_FILE\n");
-		close(file_from);
+		dprintf(STDERR_FILENO, "%s %s\n", "Error: Can't read from file",
+			argv[2]);
 		exit(98);
 	}
 
-/* copy from src to dest */
+/* use loop to iterate through the string and copy from src to dest */
+	do {
+		rd = read(fd1, buff, 1024);
+		if (rd < 0)
+		{
+			dprintf(STDERR_FILENO, "%s %s\n",
+				"Error: Can't read from file", argv[1]);
+			exit(98);
+		}
+		write(fd2, buff, rd);
+	} while (rd);
 
+	cl = close(fd1);
+	if (cl < 0)
+	{
+		dprintf(STDERR_FILENO, "%s %d\n",
+			"Error: Can't read from file", cl);
+	}
+
+	cl = close(fd2);
+	if (cl < 0)
+	{
+		dprintf(STDERR_FILENO, "%s %d\n",
+			"Error: Can't read from file", cl);
+	}
+
+
+	return (0);
 }
