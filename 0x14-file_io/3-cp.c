@@ -54,7 +54,7 @@ int main(int argc, char **argv)
 		{
 			dprintf(STDERR_FILENO, "%s %s\n",
 				"Error: Can't read from file", argv[1]);
-			exit(99);
+			exit(98);
 		}
 		wr = write(fd2, buff, rd);
 		if (wr < 0)
