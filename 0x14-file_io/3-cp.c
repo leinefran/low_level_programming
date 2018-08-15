@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 	if (cl < 0)
 	{
 		dprintf(STDERR_FILENO, "%s %d\n",
-			"Error: Can't close fd", cl);
+			"Error: Can't close fd", fdl);
 		exit(100);
 	}
 
@@ -77,7 +77,7 @@ int main(int argc, char **argv)
 	if (cl < 0)
 	{
 		dprintf(STDERR_FILENO, "%s %d\n",
-			"Error: Can't close fd", cl);
+			"Error: Can't close fd", fd2);
 		exit(100);
 	}
 	return (0);
