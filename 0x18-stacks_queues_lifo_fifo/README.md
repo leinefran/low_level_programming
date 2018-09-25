@@ -54,5 +54,6 @@ $ gcc -Wall -Werror -Wextra -pedantic *.c -o monty
 
 ### Authors
 
-[Jinji Zhang] (https://github.com/iamzinzi)
+[Jinji Zhang](https://github.com/iamzinzi)
+
 [Leine Valente](https://github.com/leinefran)
