@@ -16,8 +16,15 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	if (!key)
 		return (NULL);
 
+	if (ht->array[idx] == NULL)
+		return (NULL);
 
 	value = ht->array[idx]->value;
 
-	return (value);
+	if (value == NULL)
+		return (NULL);
+	else if (strlen(value) == 0)
+		return (NULL);
+	else
+		return (value);
 }
