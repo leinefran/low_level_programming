@@ -27,23 +27,6 @@
  * A list/array does not need to be sorted if its size is less than 2.
  * For this project you are given the print_array, and print_list functions.
 
-
-Please use these data structures for this project:
-
-/**
- * struct listint_s - Doubly linked list node
- *
- * @n: Integer stored in the node
- * @prev: Pointer to the previous element of the list
- * @next: Pointer to the next element of the list
- */
-typedef struct listint_s
-{
-    const int n;
-    struct listint_s *prev;
-    struct listint_s *next;
-} listint_t;
-
 ---
 File|Task
 ---|---
