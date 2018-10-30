@@ -7,35 +7,29 @@
  */
 void insertion_sort_list(listint_t **list)
 {
+	listint_t current = list;
+	listint_t after = current->next;
+	listint_t before = current->prev;
+	listint_t last = current->next->next;
+
 	/* check for 0 or 1 element in list */
 	if(list == NULL || *list == NULL || list->next == NULL)
 		return;
 
-	/* head is the 1st element of resulting sorted list */
-	struct listint_t *head = NULL;
-
-	while(list != NULL)
+	while(current && after)
 	{
-		struct listint_t *current = list;
-		list = list->next;
-		if (head == NULL)
+		if (current->n > after->n) /*swap!*/
 		{
-			current->next = head;
-			head = current;
+			before->next = after;
+			if (last != NULL)
+				last->prev = current;
+			current->next = last;
+			after->prev = before;
+			after->next = current;
+			current->prev = after;
+			print_list(*current);
+			break;
 		}
-		else
-		{
-			struct listint_t *p = head;
-			while (p != NULL)
-			{
-				if (p->next == NULL)
-				{
-					current->next = p->next;
-					p->next = current;
-					break;
-				}
-				p = p->next;
-			}
-		}
+		current = current->next;
 	}
 }
