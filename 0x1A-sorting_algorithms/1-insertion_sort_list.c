@@ -7,29 +7,30 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current = *list;
-	listint_t *after = (*current)->next;
-	listint_t *before = (*current)->prev;
-	listint_t *last = (*current)->next->next;
+	listint_t *move, *hold;
 
 	/* check for 0 or 1 element in list */
-	if(list == NULL || *list == NULL || list->next == NULL)
+	if(list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	while(*current && after)
+	move = hold = (*list)->next;
+	while(hold)
 	{
-		if ((*current)->n > (*after)->n) /*swap!*/
+		hold = hold->next;
+		while(move->prev && move->n < move->prev->n) /*swap!*/
 		{
-			(*before)->next = (*after);
-			if (*last != NULL)
-				(*last)->prev = (*current);
-			(*current)->next = *last;
-			(*after)->prev = *before;
-			(*after)->next = (*current);
-			(*current)->prev = (*after);
-			print_list(current);
-			break;
+			if (move->next)
+				move->next->prev = move->prev;
+			move->prev->next = move->next;
+			move->next = move->prev;
+			move->prev = move->prev->prev;
+			move->next->prev = move;
+			if (move->prev)
+				move->prev->next = move;
+			else
+				*list = move;
 		}
-		*current = (*current)->next;
+		move = hold;
+		print_list(*list);
 	}
 }
