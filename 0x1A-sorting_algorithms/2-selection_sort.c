@@ -10,26 +10,29 @@
 void swap(int *a, int *b);
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j;
-	size_t iMin = j;
+	size_t i, j, min_idx, tmp;
 
-	for (j = 0; j < size - 1; j++)
+	min_idx = i;
+	for (i = 0; i < size - 1; i++)
 	{
-		for (i = j + 1; i < size; i++)
+		for (j = i + 1; j < size; j++)
 		{
-			if (array[i] < array[iMin])
+			if (array[j] < array[min_idx])
 			{
-				iMin = i;
+				min_idx = j;
 			}
+			tmp = min_idx;
+			print_array(array, size);
 		}
-	}
-	if (iMin != j)
-	{
-		swap(&array[j], &array[iMin]);
+		if (min_idx != i)
+		{
+			swap(&array[min_idx], &array[i]);
+			print_array(array, size);
+		}
 	}
 }
 /**
- * swap_int - swaps the values of two integers.
+ * swap - swaps the values of two integers.
  * @a: is the pointer to be swaped with b
  * @b: is the pointer to be swaped with a
  *
