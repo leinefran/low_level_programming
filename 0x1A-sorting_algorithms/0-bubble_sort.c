@@ -7,10 +7,9 @@
  * @size: the size of the array.
  * Return: Nothing.
  */
-void swap(int *a, int *b);
 void bubble_sort(int *array, size_t size)
 {
-	size_t i, j;
+	size_t i, j, tmp = 0;
 
 	if (size < 2)
 		return;
@@ -22,26 +21,12 @@ void bubble_sort(int *array, size_t size)
 		{
 			if (array[j] > array[j + 1])
 			{
-				swap(&array[j], &array[j + 1]);
+				tmp = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = tmp;
 				print_array(array, size);
 			}
 		}
 	}
 
-}
-/**
- * swap - swaps the values of two integers.
- * @a: is the pointer to be swaped with b
- * @b: is the pointer to be swaped with a
- *
- * Return: Always 0.
- */
-void swap(int *a, int *b)
-{
-	int x;
-
-	x = *a;
-
-	*a = *b;
-	*b = x;
 }
