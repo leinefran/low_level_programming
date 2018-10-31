@@ -10,14 +10,14 @@ void insertion_sort_list(listint_t **list)
 	listint_t *move, *hold;
 
 	/* check for 0 or 1 element in list */
-	if(list == NULL || *list == NULL || (*list)->next == NULL)
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
 	move = hold = (*list)->next;
-	while(hold)
+	while (hold)
 	{
 		hold = hold->next;
-		while(move->prev && move->n < move->prev->n) /*swap!*/
+		while (move->prev && move->n < move->prev->n) /*swap!*/
 		{
 			if (move->next)
 				move->next->prev = move->prev;
