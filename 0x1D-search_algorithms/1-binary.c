@@ -22,12 +22,11 @@ int binary_search(int *array, size_t size, int value)
 	{
 		printf("Searching in array: ");
 
-		for (index = left; index <= right ; index++)
+		for (index = left; index <= right - 1; index++)
 		{
 			printf("%i, ", array[index]);
 		}
-
-		printf("\n");
+		printf("%i\n", array[index]);
 
 		middle = (left + right) / 2;
 
