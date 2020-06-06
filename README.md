@@ -1,5 +1,3 @@
-<img src="https://www.holbertonschool.com/holberton-logo-twitter-card.png">
-
 # Low-level programming - C
 Low-level programming & Algorithm
 
@@ -15,7 +13,7 @@ This repository contains projects for training C programming. All projects are i
 ## Installation
 To use, first download  this repository into your local machine by issuing the following command in your local terminal.
 ```
-git clone https://github.com/leinefran/holbertonschool-low_level_programming.git
+git clone https://github.com/leinefran/low_level_programming.git
 ```
 #### Directory
 Each directoy's name includes information below
